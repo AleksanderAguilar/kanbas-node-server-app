@@ -12,23 +12,8 @@ import UserRoutes from "./users/routes.js";
 
 import "dotenv/config";
 
-// const mongoose = require('mongoose');
-
-// Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/kanbas', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-// Check connection status
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB at localhost');
-});
-
-mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
-// mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
+// const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas'
+mongoose.connect('mongodb://127.0.0.1:27017/kanbas');
 
 const app = express();
 
